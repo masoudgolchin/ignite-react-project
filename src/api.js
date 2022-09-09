@@ -22,7 +22,17 @@ export const api_key = process.env.REACT_APP_RAWG_API_KEY;
 
 // Popular games
 const popular_games = `games?dates=${lastYear},${currentDate}&ordering=-rating&page-size=10&key=${api_key}`;
+const upcoming_games = `games?dates=${currentDate},${nextYear}&ordering=-added&page-size=10&key=${api_key}`;
+const new_games = `games?dates=${lastYear},${currentDate}&ordering=-released&page-size=10&key=${api_key}`;
 
 export const popularGamesURL = () => {
   return `${base_url}/${popular_games}`;
+};
+
+export const upcomingGamesURL = () => {
+  return `${base_url}/${upcoming_games}`;
+};
+
+export const newGamesURL = () => {
+  return `${base_url}/${new_games}`;
 };
