@@ -3,6 +3,7 @@ import styled from "styled-components";
 import { motion } from "framer-motion";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
+import { smallImage } from "../util";
 const GameDetail = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
@@ -47,7 +48,11 @@ const GameDetail = () => {
             <div className="gallery">
               {screen.results.map((screenshot) => {
                 return (
-                  <img src={screenshot.image} key={screenshot.id} alt="game" />
+                  <img
+                    src={smallImage(screenshot.image, 1280)}
+                    key={screenshot.id}
+                    alt="game"
+                  />
                 );
               })}
             </div>
